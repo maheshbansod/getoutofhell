@@ -29,25 +29,37 @@ int main() {
   usleep(DELAY_USEC*2);
   printf("You understood that they didn't mean it literally but you took the chance and set off on your journey to go to hell. You somehow already know the way.\n");
   usleep(DELAY_USEC*4);
-  printf("On the entrance to hell stands a mysterious orangish figure..\nYou move closer and realise that you know the guy. It's Light the friendly demon.\n");
+  printf("On the entrance to hell stands a mysterious orangish figure..\nYou move closer and realise that you know the guy. It's \033[33mLight\033[39m the friendly demon.\n");
   usleep(DELAY_USEC*4);
   printf("\"Hey buddy,\" you call out.\n");
   usleep(DELAY_USEC*2);
   printf("You know that Light would never harm you - he's even got friendly in his name. He is kinda a jerk sometimes though and would probably ask you to solve a riddle or something to let you pass through.\n");
-  usleep(DELAY_USEC*4);
+  usleep(DELAY_USEC*5);
   printf("You move closer\n");
   usleep(DELAY_USEC*2);
-  printf("\"Dude, I'm not your buddy. You didn't accept my cookies the last time we met. I'm gonna kill you.\"\n");
+  printf("\033[33m\"Dude, I'm not your buddy. You didn't accept my cookies the last time we met. I'm gonna kill you.\"\033[39m\n");
   usleep(DELAY_USEC*4);
-  printf("You - a brave adventurer - are not surprised at this turn of events. Plus you're confident that Light won't kill you.\nSo you approach him with your mighty sword and machine gun.\n");
+  printf("\033[32mYou - a brave adventurer - are not surprised at this turn of events. Plus you're confident that Light won't kill you.\nSo you approach him with your mighty sword and machine gun.\033[39m\n");
   usleep(DELAY_USEC*4);
-  printf("Light stabs you with his claws and tears apart your intestines till you die.\nLight leaves the scene.\n");
+  printf("\033[33mLight stabs you with his claws and tears apart your intestines till\033[39m \033[31m you die.\033[39m\n\033[33mLight leaves the scene.\n\033[39m");
   usleep(DELAY_USEC*4);
   printf("Your spirit moves out of your body and reaches Hell.\n");
   usleep(DELAY_USEC*1);
-  printf("Congratulations! you accomplished your goal!\n");
+  printf("\033[5m\033[32mCongratulations! you accomplished your goal!\033[39m\033[0m\n");
   usleep(DELAY_USEC*4);
-  printf("Hell is just a long tunnel. You spend an eternity in Hell but eventually get bored. You walk forward with your spirit legs and feel more warmth. You realise that you were only sitting in a random tunnel this whole time(you still dead tho). Light appears out of nowhere and tells you that to return back to life you have to possess a body with a compatible ID. He tells you that an ID compatible with you is somewhere between 1 and 100. You'll feel either too hot or too cold for different IDs based on whether that ID is greater than the compatible ID or lesser than it. You think about it. Yep, it all makes sense for you.\n");
+  printf("Hell is just a long tunnel.\n");
+  usleep(DELAY_USEC*2);
+  printf("You spend an eternity in Hell but eventually get bored.\n");
+  usleep(DELAY_USEC*2);
+  printf("You walk forward with your spirit legs and feel more warmth.\n");
+  usleep(DELAY_USEC*2);
+  printf("You realise that you were only sitting in a random tunnel this whole time(you still dead tho).\n");
+  usleep(DELAY_USEC*2);
+  printf("\033[33mLight appears out of nowhere and tells you that to return back to life you have to possess a body with a compatible ID.\033[39m\n");
+  usleep(DELAY_USEC*4);
+  printf("He tells you that an ID compatible with you is somewhere between 1 and 100.\n");
+  usleep(DELAY_USEC*2);
+  printf("You'll feel either too hot or too cold for different IDs based on whether that ID is \033[31mgreater\033[39m than the compatible ID or \033[34mlesser\033[39m than it. You think about it. Yep, it all makes sense for you.\n");
   usleep(DELAY_USEC*4);
   
   while(1) {
@@ -56,13 +68,13 @@ int main() {
     turn++;
     if(turn == 7) break;
     if(id > guess) {
-      printf("You possess body %d and feel yourself burn. This is fine, you say and get a part of your spirit burnt off. You leave immediately.\n", id);
+      printf("\033[31mYou possess body %d and feel yourself burn. This is fine, you say and get a part of your spirit burnt off. You leave immediately.\033[39m\n", id);
       usleep(DELAY_USEC*2);
     } else if(id < guess) {
-      printf("You possess body %d and feel a chill in your head. You feel your spirit being frozen slowly. This is not a compatible body. You quickly move out.\n", id);
+      printf("\033[34mYou possess body %d and feel a chill in your head. You feel your spirit being frozen slowly. This is not a compatible body. You quickly move out.\033[39m\n", id);
       usleep(DELAY_USEC*2);
     } else { //id=guess
-      printf("Ahh.. your heart is cold. You feel your stomach burn. You're alive.\n");
+      printf("Ahh.. \033[34myour heart is cold.\033[39m\033[31m You feel your stomach burn.\033[39m You're alive.\n");
       usleep(DELAY_USEC*2);
       printf("You're alive.\n");
       usleep(DELAY_USEC*2);
@@ -84,7 +96,7 @@ int main() {
       usleep(DELAY_USEC*4);
       printf("Your bones shatter and you die.\n");
       usleep(DELAY_USEC*2);
-      printf("You are a spirit with %d spirit organs. :)\n", SPIRITORGANS_CNT - turn);
+      printf("\033[32mYou are a spirit with %d spirit organs. :)\033[39m\n", SPIRITORGANS_CNT - turn);
       usleep(DELAY_USEC*4);
       break;
     }
@@ -103,11 +115,11 @@ int main() {
     usleep(DELAY_USEC*2);
     printf("What you looking at? You're gone now.\n");
     usleep(DELAY_USEC*2);
-    printf("Light collects your burnt and frozen organs and dissapears.\n");
+    printf("\033[31mLight collects your burnt and frozen organs and dissapears.\033[39m\n");
     usleep(DELAY_USEC*2);
   }
   
-  printf("\nThanks for playing! this process gonna kill itself now. :)");
+  printf("\nThanks for playing! this process gonna kill itself now. :)\n");
   
   return 0;
 }
